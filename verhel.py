@@ -52,6 +52,40 @@ FRONTENDS_DESC = R'''
 
 # $$_BUILDER_BACKENDS_DESC_START_HERE_$$ #
 BACKENDS_DESC = R'''
+{
+    "cpp": {
+        "version": "1.0.0",
+        "source.begin":   "#pragma once\n\nnamespace verhel {\n\n",
+        "source.comment": "//",
+        "source.end":     "\n} // namespace verhel\n",
+        "format.bool":    "    inline constexpr auto {0} = {1};\n",
+        "format.number":  "    inline constexpr auto {0} = {1};\n",
+        "format.string":  "    inline constexpr auto {0} = \"{1!u}\";\n",
+        "format.var":     "{0!u}",
+        "var_map": [
+            { "version.major":       "VERSION_MAJOR      " },
+            { "version.minor":       "VERSION_MINOR      " },
+            { "version.patch":       "VERSION_PATCH      " },
+            { "version.pre_release": "VERSION_PRE_RELEASE" },
+            { "version.string":      "VERSION_STRING     " },
+            { "project.name":        "PROJECT_NAME       " },
+            { "project.author":      "PROJECT_AUTHOR     " },
+            { "project.license":     "PROJECT_LICENSE    " },
+            { "project.copyright":   "PROJECT_COPYRIGHT  " },
+            { "project.description": "PROJECT_DESCRIPTION" },
+            { "project.directory":   "PROJECT_DIRECTORY  " },
+            { "project.path":        "PROJECT_PATH       " },
+            { "build.date":          "BUILD_DATE         " },
+            { "build.time":          "BUILD_TIME         " },
+            { "vcs.name":            "VCS_NAME           " },
+            { "vcs.commit_hash":     "VCS_COMMIT_HASH    " },
+            { "vcs.short_hash":      "VCS_SHORT_HASH     " },
+            { "vcs.tag":             "VCS_TAG            " },
+            { "vcs.branch":          "VCS_BRANCH         " },
+            { "vcs.commit_count":    "VCS_COMMIT_COUNT   " }
+        ]
+    }
+}
 '''
 # $$_BUILDER_BACKENDS_DESC_END_HERE_$$ #
 
