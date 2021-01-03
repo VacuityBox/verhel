@@ -43,6 +43,36 @@ import time
 
 # $$_BUILDER_FRONTENDS_DESC_START_HERE_$$ #
 FRONTENDS_DESC = R'''
+{
+    "git": {
+        "version": "1.0.0",
+        "exe": "git",
+        "get.repo": {
+            "cmd": "git rev-parse --git-dir",
+            "ret_codes": [0]
+        },
+        "get.commit_hash": {
+            "cmd": "git rev-parse HEAD",
+            "ret_codes": [0]
+        },
+        "get.short_hash":  {
+            "cmd": "git rev-parse --short HEAD",
+            "ret_codes": [0]
+        },
+        "get.tag":  {
+            "cmd": "git describe --tags --abbrev=0 --exact-match",
+            "ret_codes": [0, 128]
+        },
+        "get.branch": {
+            "cmd": "git rev-parse --abbrev-ref HEAD",
+            "ret_codes": [0]
+        },
+        "get.commit_count": {
+            "cmd": "git rev-list --count HEAD",
+            "ret_codes": [0]
+        }
+    }
+}
 '''
 # $$_BUILDER_FRONTENDS_DESC_END_HERE_$$ #
 
